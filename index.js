@@ -51,18 +51,22 @@ function checkCollision(rock) {
                * 3. The rock's left edge is < the DODGER's right edge,
                *    and the rock's right edge is > the DODGER's right edge
                */{
-      return true
+      return true;
     }
   }
 }
 
-rock.className = 'rock'
-rock.style.left = `${x}px`
-var top = 0
-rockNode.style.top = top
-GAME.appendChild(rock);
+function createRock(x)
+{
+  const rock = document.createElement('div')
+  rock.className = 'rock'
+  rock.style.left = `${x}px`
+  var top = 0
+  top = rockNode.style.top;
+   
+  GAME.appendChild(rock);
 
-  
+
 
   /**
    * Now that we have a rock, we'll need to append
