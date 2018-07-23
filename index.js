@@ -182,8 +182,8 @@ function moveDodgerRight() {
 })
 }
 
-@param {string} p 
-@returns {number} 
+@param {string} p
+@returns {number}
 
 function positionToInteger(p) {
   return parseInt(p.split('px')[0]) || 0
