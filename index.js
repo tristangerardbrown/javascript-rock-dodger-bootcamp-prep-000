@@ -56,18 +56,13 @@ function checkCollision(rock) {
   }
 }
 
-function createRock(x) {
-  const rock = document.createElement('div')
+rock.className = 'rock'
+rock.style.left = `${x}px`
+var top = 0
+rockNode.style.top = top
+GAME.appendChild(rock);
 
-  rock.className = 'rock'
-  rock.style.left = `${x}px`
-
-  // Hmmm, why would we have used `var` here?
-  var top = 0
-
-  rock.style.top = top
-
-  GAME.appendChild(rock)
+  
 
   /**
    * Now that we have a rock, we'll need to append
@@ -136,16 +131,15 @@ function endGame() {
 }
 
 function moveDodger(e) {
-  document.addEventListener('keydown', function(e) {
-    if (e.which === LEFT_ARROW) {
-      window.requestAnimationFrame(moveDodgerLeft());
-    }
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.which === RIGHT_ARROW) {
-      window.requestAnimationFrame(moveDodgerRight());
-    }
-  })
+  if (e.which === 37) {
+		moveDodgerLeft();
+		e.stopPropagation();
+		e.preventDefault();
+	} else if (e.which === 39) {
+		moveDodgerRight();
+		e.stopPropagation();
+		e.preventDefault();
+	}
 }
   // implement me!
   /**
