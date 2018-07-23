@@ -180,7 +180,13 @@ function moveDodgerRight() {
            DODGER.style.left = `${left + 4}px`;
 }
 })
-return parseInt(p.split('px')[0]) || 0
+}
+
+@param {string} p 
+@returns {number} 
+
+function positionToInteger(p) {
+  return parseInt(p.split('px')[0]) || 0
 }
 
 
