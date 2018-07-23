@@ -136,13 +136,16 @@ function endGame() {
 
 function moveDodger(e) {
   if (e.which === 37) {
-		moveDodgerLeft();
+
 		e.stopPropagation();
 		e.preventDefault();
+    moveDodgerLeft();
+
 	} else if (e.which === 39) {
-		moveDodgerRight();
+
 		e.stopPropagation();
 		e.preventDefault();
+    moveDodgerRight();
 	}
 }
   // implement me!
