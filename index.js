@@ -158,10 +158,13 @@ function moveDodger(e) {
    */
 
 function moveDodgerLeft() {
+    window.requestAnimationFrame(function(){
 
-    var leftNumbers = DODGER.style.left.replace('px', '')
-    var left = parseInt(leftNumbers, 10)
-    DODGER.style.left = `${left - 4}px`
+      const left = positionToInteger(DODGER.style.left)
+        if(left > 0){
+          DODGER.style.left = `${left - 4}px`
+        }
+      })
 }
 
   // implement me!
